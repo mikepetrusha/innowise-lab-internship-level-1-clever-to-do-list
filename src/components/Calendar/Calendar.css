@@ -1,0 +1,20 @@
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  margin: auto auto 50px auto;
+  padding: 10px 3px 10px 3px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.calendar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}

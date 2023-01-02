@@ -1,0 +1,40 @@
+.todo-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  background-color: transparent;
+  padding: 20px;
+}
+
+.todo-input {
+  border: 1px solid transparent;
+  color: #b9b9b9;
+  padding: 7px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+.todo-input:hover,
+.todo-input:active,
+.todo-input:focus {
+  color: #ff632c;
+  border: 1px solid transparent;
+}
+
+.todo-form label {
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #ff632c;
+  width: 100%;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
