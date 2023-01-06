@@ -33,7 +33,6 @@ export default function CalendarItem({
     <li
       id={date.getDate()}
       onClick={handleDayClick}
-      onKeyDown={handleDayClick}
       className="calendar-item-container"
     >
       <div className={cls.join(" ")}>

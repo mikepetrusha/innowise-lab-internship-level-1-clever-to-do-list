@@ -26,11 +26,7 @@ export default function Header({ headerTitle }) {
 
   return (
     <header className="header">
-      <h1
-        className="page-title"
-        onClick={() => navigate("/")}
-        onKeyDown={() => navigate("/")}
-      >
+      <h1 className="page-title" onClick={() => navigate("/")}>
         {headerTitle}
       </h1>
       {isDasboard && (
