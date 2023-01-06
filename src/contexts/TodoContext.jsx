@@ -25,10 +25,14 @@ export default function TodoProvider({ children }) {
   const { currentUser } = useAuth();
   const getTodos = async () => {
     try {
-      const todoQuery = query(ref, ("email", "==", currentUser.email));
-      const data = await getDocs(todoQuery);
-      setTodos(data.docs.map((el) => el.data()));
       setLoading(true);
+      const todoQuery = query(ref);
+      const data = await getDocs(todoQuery);
+      const filteredByEmail = data.docs
+        .filter((el) => el.data().email === currentUser.email)
+        .map((el) => el.data());
+
+      setTodos(filteredByEmail);
     } catch (error) {
       console.error(error);
     } finally {
@@ -38,7 +42,7 @@ export default function TodoProvider({ children }) {
 
   const getTodoById = async (todoId) => {
     try {
-      const todoQuery = query(ref, ("email", "==", currentUser.email));
+      const todoQuery = query(ref);
       const data = await getDocs(todoQuery);
 
       const todoById = data.docs
@@ -60,7 +64,7 @@ export default function TodoProvider({ children }) {
   };
 
   const editTodoCompleted = async (id, checked) => {
-    const todoQuery = query(ref, ("email", "==", currentUser.email));
+    const todoQuery = query(ref);
     const data = await getDocs(todoQuery);
 
     const todoById = data.docs
@@ -77,7 +81,7 @@ export default function TodoProvider({ children }) {
   };
 
   const editTodo = async (updatedTodo) => {
-    const todoQuery = query(ref, ("email", "==", currentUser.email));
+    const todoQuery = query(ref);
     const data = await getDocs(todoQuery);
 
     const todoById = data.docs
@@ -92,7 +96,7 @@ export default function TodoProvider({ children }) {
   };
 
   const deleteTodo = async (todoId) => {
-    const todoQuery = query(ref, ("email", "==", currentUser.email));
+    const todoQuery = query(ref);
     const data = await getDocs(todoQuery);
 
     const todoById = data.docs
