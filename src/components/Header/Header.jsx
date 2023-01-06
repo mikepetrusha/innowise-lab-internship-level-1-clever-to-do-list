@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import "./Header.css";
@@ -20,12 +21,13 @@ export default function Header({ headerTitle }) {
     }
   }
 
-  if (error !== "") {
-    console.log(error);
+  if (error) {
+    toast.error(error);
   }
 
   return (
     <header className="header">
+      <Toaster position="top-right" reverseOrder={false} />
       <h1 className="page-title" onClick={() => navigate("/")}>
         {headerTitle}
       </h1>

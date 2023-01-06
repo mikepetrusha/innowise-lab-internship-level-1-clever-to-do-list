@@ -1,4 +1,5 @@
 import React, { useContext, useState, createContext } from "react";
+import toast from "react-hot-toast";
 import {
   collection,
   query,
@@ -34,7 +35,7 @@ export default function TodoProvider({ children }) {
 
       setTodos(filteredByEmail);
     } catch (error) {
-      console.error(error);
+      toast.error(error);
     } finally {
       setLoading(false);
     }
@@ -51,7 +52,7 @@ export default function TodoProvider({ children }) {
 
       setTodo(todoById[0]);
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 
@@ -59,7 +60,7 @@ export default function TodoProvider({ children }) {
     try {
       await addDoc(ref, newTodo);
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 
@@ -76,7 +77,7 @@ export default function TodoProvider({ children }) {
       });
       getTodos();
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 
@@ -91,7 +92,7 @@ export default function TodoProvider({ children }) {
       await updateDoc(doc(db, "todo", todoById[0]), updatedTodo);
       getTodos();
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 

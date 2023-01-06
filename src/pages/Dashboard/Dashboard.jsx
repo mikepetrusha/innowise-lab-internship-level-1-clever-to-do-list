@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 import moment from "moment";
 import { useTodo } from "../../contexts/TodoContext";
 import Header from "../../components/Header/Header";
@@ -37,6 +38,7 @@ export default function Dashboard() {
 
   return (
     <>
+      <Toaster position="top-right" reverseOrder={false} />
       <Header headerTitle="Tassker" />
       <main>
         <div className="wrapper todos">

@@ -1,7 +1,6 @@
 import React from "react";
 
 function RemoveButton({ handleDelete }) {
-  console.log("this");
   return (
     <i role="note" className="secondary-button" onClick={handleDelete}>
       <svg
