@@ -2,21 +2,11 @@ import React from "react";
 import moment from "moment";
 import Scroll from "../Scroller/Scroller";
 import CalendarItem from "../CalendarItem/CalendarItem";
-import {
-  weekDays,
-  daysInMonth,
-  month,
-  year,
-  initMonth,
-} from "../../utils/PickDate";
+import { daysInMonth, month, year, initMonth } from "../../utils/PickDate";
 import { useTodo } from "../../contexts/TodoContext";
 import "./Calendar.css";
 
-export default function Calendar({
-  currentDay,
-  selectedDay,
-  handleSelectedDayChange,
-}) {
+export default function Calendar({ selectedDay, handleSelectedDayChange }) {
   const { todos } = useTodo();
 
   function handleDayClick(event) {
@@ -38,8 +28,6 @@ export default function Calendar({
               <CalendarItem
                 key={day}
                 day={day}
-                weekDays={weekDays}
-                currentDay={currentDay}
                 selectedDay={selectedDay}
                 handleDayClick={handleDayClick}
                 todosByDate={todosByDate}
