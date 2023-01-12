@@ -113,6 +113,7 @@ export default function TodoProvider({ children }) {
     todos,
     loading,
     todo,
+    setTodos,
     addTodo,
     editTodoCompleted,
     getTodos,

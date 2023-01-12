@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import { useTodo } from "../../contexts/TodoContext";
 import "./Header.css";
 
 export default function Header({ headerTitle }) {
   const [error, setError] = useState("");
   const { signout } = useAuth();
+  const { setTodos } = useTodo();
   const navigate = useNavigate();
   const isDasboard = headerTitle === "Tassker";
 
@@ -14,6 +16,7 @@ export default function Header({ headerTitle }) {
     setError("");
 
     try {
+      setTodos([]);
       await signout();
       navigate("/signin");
     } catch {
