@@ -16,7 +16,7 @@ export default function SignupPage() {
     password: yup.string().min(6).required(),
     confirmPassword: yup
       .string()
-      .oneOf([yup.ref("password"), null])
+      .oneOf([yup.ref("password"), null], "Password mismatch")
       .required(),
   });
 
