@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "react/jsx-uses-react": ["off"],
+    "react/react-in-jsx-scope": ["off"],
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-no-constructed-context-values": 0,
+    "react/prop-types": 0,
+    "no-shadow": "off",
+    "no-console": 0,
+    "react/jsx-no-bind": 0,
+    "react-hooks/exhaustive-deps": 0,
+    "@typescript-eslint/no-shadow": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/label-has-associated-control": 0
+  }
+}

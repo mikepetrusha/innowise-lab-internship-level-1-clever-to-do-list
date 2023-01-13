@@ -1,0 +1,31 @@
+.scroll-container::-webkit-scrollbar {
+  width: 24px;
+  height: 8px;
+  background-color: whitesmoke;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ff632c;
+  border-radius: 9em;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #ffbf36;
+}
+
+.scroll-container {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  margin: auto auto 50px auto;
+  padding: 10px 3px 10px 3px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.calendar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
